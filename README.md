@@ -13,6 +13,7 @@ For this plugin you need:
 - a breadboard
 - a LED for displaying recognized motions (*optional*)
 
+![Example layout](https://raw.githubusercontent.com/stdevel/check_gpio_pir/master/example_layout.jpg "Example layout")
 
 
 Usage
