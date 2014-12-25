@@ -1,7 +1,7 @@
 check_gpio_pir
 ==============
 
-``check_gpio_pir`` is a Nagios / Icinga plugin written in Python for checking motions recognized by a PIR (passive infrared) sensor connected to a Raspberry Pi via GPIO.
+``check_gpio_pir`` is a Nagios / Icinga plugin written in Python for checking motions recognized by a **PIR** (*passive infrared*) sensor connected to a Raspberry Pi via **GPIO** (*General Purpose Input/Output*).
 Using this you can generate monitoring notifications for motions captured by the sensor.
 
 Requirements
