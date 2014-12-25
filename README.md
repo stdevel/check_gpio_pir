@@ -13,6 +13,8 @@ For this plugin you need:
 - a breadboard
 - a LED for displaying recognized motions (*optional*)
 
+
+
 Usage
 =====
 By default the plugin checks for **15** seconds and returns a **WARNING** if **3** or more motions were detected.
@@ -30,9 +32,49 @@ You can use the following parameters to customize the plugin behavior:
 
 By default the GPIO pins **7** (*PIR sensor*) and **11** (*LED*) are used.
 
+
+
 Examples
 ========
 Check the sensor with default parameters (*GPIO PIN 7, 15 second check, motion threshold of 3*):
 ```
 # ./check_gpio_pir.py
+OK: motion counter (0) beyond threshold (3)
 ```
+
+Check the sensor with customized thresholds and GPIO pin:
+```
+# ./check_gpio_pir.py -c 2 -t 30 -i 15
+WARNING: 5 motions detected!
+```
+
+Check the sensor with enabled debugging and LED flashing:
+```
+# ./check_gpio_pir.py -dl
+DEBUG: {'motionThreshold': 3, 'seconds': 15, 'enableLED': True, 'debug': True, 'ledPIN': 11, 'sensorPIN': 7}
+DEBUG: Motion detected!
+DEBUG: checks done: 1  - motions: 1
+DEBUG: checks done: 2  - motions: 1
+DEBUG: checks done: 3  - motions: 1
+DEBUG: Motion detected!
+DEBUG: checks done: 4  - motions: 2
+DEBUG: Motion detected!
+DEBUG: checks done: 5  - motions: 3
+DEBUG: checks done: 6  - motions: 3
+DEBUG: checks done: 7  - motions: 3
+DEBUG: Motion detected!
+DEBUG: checks done: 8  - motions: 4
+DEBUG: checks done: 9  - motions: 4
+DEBUG: checks done: 10  - motions: 4
+DEBUG: checks done: 11  - motions: 4
+DEBUG: checks done: 12  - motions: 4
+DEBUG: checks done: 13  - motions: 4
+DEBUG: checks done: 14  - motions: 4
+DEBUG: checks done: 15  - motions: 4
+WARNING: 4 motions detected!
+```
+
+Sensor tuning
+=============
+The most PIR sensors have two potentiometer which control the behavior. The **first** potentiometer control the sensitivity, the **second** sets the time perioid the sensor is triggered in case of recognized motions.
+Depending on the motions you want to trigger (*e.g. flashing LEDs*) you need to adjust the potentiometers.
