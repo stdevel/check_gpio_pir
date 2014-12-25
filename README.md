@@ -77,5 +77,9 @@ WARNING: 4 motions detected!
 
 Sensor tuning
 =============
-The most PIR sensors have two potentiometer which control the behavior. The **first** potentiometer control the sensitivity, the **second** sets the time perioid the sensor is triggered in case of recognized motions.
+The most PIR sensors have two potentiometer which control the behavior.
+
+![Picture of sensor potentiometers](https://raw.githubusercontent.com/stdevel/check_gpio_pir/master/pir_sensor.jpg "Picture of sensor potentiometers")
+
+The **first** potentiometer control the sensitivity, the **second** sets the time perioid the sensor is triggered in case of recognized motions.
 Depending on the motions you want to trigger (*e.g. flashing LEDs*) you need to adjust the potentiometers.
