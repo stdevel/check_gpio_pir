@@ -114,3 +114,9 @@ define command{
 ```
 command[check_gpio_pir]=/usr/lib/nagios/plugins/check_gpio_pir.py -v
 ```
+
+Use-cases
+=========
+I'm using this plugin to monitoring my washing machine:
+
+[![Monitoring washing machines with a Raspberry Pi + PIR sensor + Nagios / Icinga ](http://img.youtube.com/vi/n_5e-_r65yQ/0.jpg)](http://www.youtube.com/watch?v=n_5e-_r65yQ)
