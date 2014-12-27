@@ -86,3 +86,25 @@ The most PIR sensors have two potentiometer which control the behavior.
 2. The **second** potentiometer sets the time period the sensor is triggered in case of recognized motions.
 
 Depending on the motions you want to trigger (*e.g. flashing LEDs*) you need to adjust the potentiometers.
+
+Nagios / Icinga configuration
+=============================
+To use this plugin along with Nagios or Icinga you need to define a command for it:
+```
+define command{
+        command_name check_local_pir
+        command_line $USER2$/check_gpio_pir.py
+}
+```
+
+If you plan to monitor remote hosts with **NRPE** you need to define a NRPE command on your monitoring system and the remote host:
+```
+define command{
+        command_name check_nrpe_pir
+        command_line $USER1$/check_nrpe -H $HOSTADDRESS$ -t 60 -c check_gpio_pir
+}
+```
+
+```
+command[check_gpio_pir]=/usr/lib/nagios/plugins/check_gpio_pir.py -v
+```
