@@ -47,6 +47,9 @@ if __name__ == "__main__":
 	#-c / --motion-threshold
 	parser.add_option("-c", "--motion-threshold", dest="motionThreshold", default=3, action="store", type="int", metavar="COUNTER", help="threshold of motions that trigger a warning event (default: 3)")
 	
+	#-v / --invert-match
+	parser.add_option("-v", "--invert-match", dest="invertMatch", default=False, action="store_true", help="inverts the sense of matching to report missing motion (default: no)")
+	
 	#parse arguments
 	(options, args) = parser.parse_args()
 	
@@ -107,8 +110,16 @@ if __name__ == "__main__":
 	
 	#checks finished - return result
 	if motions >= options.motionThreshold:
-		print "WARNING:",motions,"motions detected!"
-		exit(1)
+		if options.invertMatch:
+			print "OK:",motions,"motions detected!"
+			exit(0)
+		else:
+			print "WARNING:",motions,"motions detected!"
+			exit(1)
 	else:
-		print "OK: motion counter ("+str(motions)+") beyond threshold ("+str(options.motionThreshold)+")"
-		exit(0)
+		if options.invertMatch:
+			print "WARNING: motion counter ("+str(motions)+") beyond threshold ("+str(options.motionThreshold)+")"
+			exit(1)
+		else:
+			print "OK: motion counter ("+str(motions)+") beyond threshold ("+str(options.motionThreshold)+")"
+			exit(0)
