@@ -44,6 +44,12 @@ Check the sensor with default parameters (*GPIO PIN 7, 15 second check, motion t
 OK: motion counter (0) beyond threshold (3)
 ```
 
+Check the sensor with default parameters with inverted match:
+```
+# ./check_gpio_pir.py -v
+WARNING: motion counter (0) beyond threshold (3)
+```
+
 Check the sensor with customized thresholds and GPIO pin:
 ```
 # ./check_gpio_pir.py -c 2 -t 30 -i 15
