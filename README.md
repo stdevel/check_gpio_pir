@@ -30,6 +30,7 @@ You can use the following parameters to customize the plugin behavior:
 | ``-i`` / ``--sensor-pin`` | GPIO PIN of PIR sensor (*default: 7*) |
 | ``-t`` / ``--seconds`` | threshold in seconds the sensor is read (*default: 15*) |
 | ``-c`` / ``--motion-threshold`` | threshold of motions that trigger a warning event (*default: 3*) |
+| ``-v`` / ``--ivnert-match`` | inverts the sense of matching to report missing motion (*default: no*) |
 
 By default the GPIO pins **7** (*PIR sensor*) and **11** (*LED*) are used.
 
