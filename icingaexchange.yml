@@ -1,0 +1,18 @@
+name: check_gpio_pir
+description: "file:///README.md"
+url: "https://github.com/stdevel/check_gpio_pir"
+tags: GPIO,Raspberry Pi,PIR sensor
+vendor: Linux
+target: Operating System
+type: Plugin
+license: gplv2
+releases: 
+  - 
+    name: 1.0
+    description: "1.0 Release"
+    files: 
+      - 
+        name: check_gpio_pir.py
+        url: "file:///check_gpio_pir.sh"
+        description: "First release"
+        checksum: bedd1b3001bf7f56d38e07c146128d00
